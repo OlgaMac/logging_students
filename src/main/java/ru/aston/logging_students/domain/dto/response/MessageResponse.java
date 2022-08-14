@@ -1,33 +1,29 @@
 package ru.aston.logging_students.domain.dto.response;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import ru.aston.logging_students.utils.LocalDateDeserializer;
+import ru.aston.logging_students.utils.LocalDateSerializer;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Accessors(chain = true)
-@Schema(name = "Логи", description = "Информация о логе")
 public class MessageResponse {
-    @Schema(description = "Идентификатор сообщения",
-            example = "1")
+
     private Long id;
 
-    @Schema(description = "Идентификатор студента оставившего лог", example = "1")
     private Long studentId;
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate created;
 
-    @Schema(description = "Дата создания лога")
-    private LocalDateTime created;
-
-    @Schema(description = "Текст лога",
-            maxLength = 500,
-            minLength = 1,
-            example = "some text")
     private String text;
 
 }

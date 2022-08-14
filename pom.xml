@@ -13,17 +13,15 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework.version>5.3.15</org.springframework.version>
+        <org.springframework.version>5.2.15.RELEASE</org.springframework.version>
         <javax.servlet.version>3.0.1</javax.servlet.version>
         <org.postgresql.version>42.3.3</org.postgresql.version>
         <org.mockito.version>4.6.1</org.mockito.version>
-        <io.swagger.cor.v3.version>2.2.0</io.swagger.cor.v3.version>
-        <org.springdoc.version>1.6.8</org.springdoc.version>
         <com.fasterxml.jackson.core.version>2.13.2</com.fasterxml.jackson.core.version>
         <org.liquibase.version>4.15.0</org.liquibase.version>
         <org.projectlombok.version>1.18.24</org.projectlombok.version>
         <org.junit.jupiter.version>5.9.0</org.junit.jupiter.version>
-        <io.springfox.version>3.0.0</io.springfox.version>
+        <io.springfox.version>2.9.2</io.springfox.version>
     </properties>
     <dependencies>
         <dependency>

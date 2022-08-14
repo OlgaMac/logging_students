@@ -10,7 +10,7 @@ import ru.aston.logging_students.domain.entity.StudentEntity;
 import ru.aston.logging_students.repository.MessageRepository;
 
 import javax.persistence.Query;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -30,7 +30,7 @@ public class MessageRepositoryImpl implements MessageRepository {
         StudentEntity student = findById(studentId);
         MessageEntity newMessage = new MessageEntity();
         newMessage.setStudent(student);
-        newMessage.setDate(LocalDateTime.now());
+        newMessage.setDate(LocalDate.now());
         newMessage.setText(message);
         session.persist(newMessage);
 
@@ -44,7 +44,7 @@ public class MessageRepositoryImpl implements MessageRepository {
         MessageEntity updateMessage = findByIdLog(message.getId());
         updateMessage.setId(message.getId());
         updateMessage.setStudent(updateMessage.getStudent());
-        updateMessage.setDate(LocalDateTime.now());
+        updateMessage.setDate(LocalDate.now());
         updateMessage.setText(message.getText());
         session.save(updateMessage);
 
